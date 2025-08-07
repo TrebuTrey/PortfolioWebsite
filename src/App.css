@@ -1,38 +1,96 @@
+/* Update your src/App.css file - Cleaned up version */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    #14b8a6, /* teal-500 */
+    #0d9488, /* teal-600 */
+    #6b7280, /* gray-500 */
+    #4b5563, /* gray-600 */
+    #14b8a6, /* back to teal-500 */
+    #0d9488  /* teal-600 */
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease-in-out infinite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* General Section Styles */
+.section {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 2rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.home-section {
+  padding-top: 6rem; /* Account for fixed navigation */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.content-container {
+  max-width: 800px;
+  text-align: center;
+  padding: 2rem;
+}
+
+.content-container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.content-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.content-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container h1 {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .content-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .content-container p {
+    font-size: 1rem;
+  }
+  
+  .section {
+    padding: 1rem;
+  }
+  
+  .home-section {
+    padding-top: 5rem;
   }
 }
