@@ -1,0 +1,21 @@
+.lang-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.lang-chip {
+  background: #14b8a6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: default;
+  transition: background 0.3s ease;
+}
+
+.lang-chip:hover {
+  background: #0d9488;
+}

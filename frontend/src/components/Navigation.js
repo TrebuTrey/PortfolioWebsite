@@ -16,7 +16,7 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <div className="nav-logo">
-          <h2>Your Portfolio</h2>
+          <h2>TP3</h2>
         </div>
         <ul className="nav-links">
           <li>
@@ -24,7 +24,7 @@ const Navigation = () => {
               onClick={() => scrollToSection('home')}
               className="nav-link"
             >
-              Home
+              About
             </button>
           </li>
           <li>

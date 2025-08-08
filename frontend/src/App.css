@@ -12,13 +12,13 @@ html, body {
     -45deg,
     #14b8a6, /* teal-500 */
     #0d9488, /* teal-600 */
-    #6b7280, /* gray-500 */
-    #4b5563, /* gray-600 */
+    #7c8086, /* gray-500 */
+    #6a6e74, /* gray-600 */
     #14b8a6, /* back to teal-500 */
     #0d9488  /* teal-600 */
   );
   background-size: 400% 400%;
-  animation: gradientShift 8s ease-in-out infinite;
+  animation: gradientShift 45s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
@@ -43,13 +43,13 @@ html, body {
   color: white;
 }
 
-.home-section {
+.about-section {
   padding-top: 6rem; /* Account for fixed navigation */
 }
 
 .content-container {
   max-width: 800px;
-  text-align: center;
+  text-align: left;
   padding: 2rem;
 }
 
