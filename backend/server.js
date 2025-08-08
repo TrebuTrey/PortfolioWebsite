@@ -1,21 +1,17 @@
 const express = require('express');
-const fetch = require('node-fetch'); // or native fetch if your Node version supports it
 const cors = require('cors');
-
-require('dotenv').config(); // To load environment variables from .env file
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors()); // Allow requests from your frontend origin (configure as needed)
-
-const BRANDFETCH_API_URL = 'https://api.brandfetch.io/v2/brands/';
+app.use(cors());
 
 app.get('/api/logo/:domain', async (req, res) => {
   const { domain } = req.params;
 
   try {
-    const response = await fetch(`${BRANDFETCH_API_URL}${domain}`, {
+    const response = await fetch(`https://api.brandfetch.io/v2/brands/${domain}`, {
       headers: {
         Authorization: `Bearer ${process.env.BRANDFETCH_API_KEY}`,
       },
@@ -27,8 +23,15 @@ app.get('/api/logo/:domain', async (req, res) => {
 
     const data = await response.json();
 
-    // Return just the logo URLs or the whole data depending on your needs
-    res.json(data);
+    let logoUrl = null;
+    if (data.logos && data.logos.length > 0) {
+      const svgDark = data.logos.find(logo => logo.type === 'svg' && logo.theme === 'dark');
+      const svgLight = data.logos.find(logo => logo.type === 'svg' && logo.theme === 'light');
+      const anyLogo = data.logos[0];
+      logoUrl = (svgDark || svgLight || anyLogo).url;
+    }
+
+    res.json({ logoUrl });
   } catch (error) {
     console.error('Error fetching logo:', error);
     res.status(500).json({ error: 'Server error fetching logo' });
