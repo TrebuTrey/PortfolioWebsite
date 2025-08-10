@@ -16,7 +16,7 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <div className="nav-logo">
-          <h2>TP3</h2>
+          <h2>Trey Pubins</h2>
         </div>
         <ul className="nav-links">
           <li>
@@ -25,6 +25,14 @@ const Navigation = () => {
               className="nav-link"
             >
               About
+            </button>
+          </li>
+          <li>
+            <button 
+              onClick={() => scrollToSection('skills')}
+              className="nav-link"
+            >
+              Skills
             </button>
           </li>
           <li>

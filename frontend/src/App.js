@@ -46,6 +46,7 @@ function App() {
       {/* Skills Section - Fill up with certificates experience */}
       <section id='skills' className='section skills-section'>
         <div className='content-container'>
+          <h2>Skills and Certifications</h2>
           <SkillsSection />
         </div>
       </section>

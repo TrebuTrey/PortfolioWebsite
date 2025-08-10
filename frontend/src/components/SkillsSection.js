@@ -3,7 +3,7 @@ import React from 'react';
 import Certs from './Certs';
 import './SkillsSection.css'; // for your programming languages styles
 
-const programmingLanguages = ['Python', 'Java','JavaScript/TypeScript', 'Excel VBA'];
+const programmingLanguages = ['Python', 'Java','JavaScript/TypeScript', 'Excel VBA', 'Matlab'];
 
 export default function SkillsSection() {
   return (
