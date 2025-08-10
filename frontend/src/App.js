@@ -5,6 +5,7 @@ import './App.css';
 import Navigation from './components/Navigation';
 import Contact from './components/Contact';
 import SkillsSection from './components/SkillsSection';
+import Projects from './components/Projects';
 
 function App() {
   return (
@@ -55,7 +56,7 @@ function App() {
       <section id="projects" className="section projects-section">
         <div className="content-container">
           <h2>Products & Projects</h2>
-          <p>This section will showcase your projects and products. Coming soon!</p>
+          <Projects />
         </div>
       </section>
 

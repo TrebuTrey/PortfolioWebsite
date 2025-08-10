@@ -2,8 +2,7 @@
 import React from 'react';
 import Certs from './Certs';
 import './SkillsSection.css'; // for your programming languages styles
-
-const programmingLanguages = ['Python', 'Java','JavaScript/TypeScript', 'Excel VBA', 'Matlab'];
+import { programmingLanguages } from '../data/data';
 
 export default function SkillsSection() {
   return (

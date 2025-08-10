@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import './Contact.css';
+import { contactInfo } from '../data/data';
 
 const Contact = () => {
   const [showForm, setShowForm] = useState(false);
@@ -137,7 +138,7 @@ const Contact = () => {
             <h3>Or connect with me on:</h3>
             <div className="social-media">
               <a 
-                href="https://www.linkedin.com/in/trey-pubins-a550701aa/" 
+                href= { contactInfo.linkedIn }
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-link"
@@ -148,7 +149,7 @@ const Contact = () => {
                 </svg>
               </a>
               <a 
-                href="https://github.com/TrebuTrey" 
+                href= { contactInfo.gitHub }
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-link"
