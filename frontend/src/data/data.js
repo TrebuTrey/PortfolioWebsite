@@ -67,17 +67,45 @@ export const projectsData = [
   },
   {
     id: 2,
-    name: "Task Manager",
-    summary: "A full-stack MERN app for tracking daily tasks with user auth.",
+    name: "Estimation Tool",
+    summary: "Connect Frontend to Inventory Management API and calculate total cost of workflow.",
     video: "https://www.youtube.com/embed/ScMzIvxBSi4",
-    tags: ["Full Stack", "MongoDB", "React"]
+    tags: ["API", "Python"]
   },
   {
     id: 3,
-    name: "Portfolio Website",
-    summary: "My personal portfolio with animations and CMS integration.",
+    name: "Progress Tracker",
+    summary: "Macro-Enabled Excel files used by onsite superintendents to provide tracking updates to dashboard Excel sheet and can send daily updates to email lists.",
+    video: "",
+    tags: ["Excel VBA", "Automation"]
+  },
+  {
+    id: 4,
+    name: "Accounts Template Populator",
+    summary: "Python UI for choosing the product and department of choice will populate and compile all files relevant for the customer and the billing department. Selenium used to file for permitting through the provided Microsoft Forms links.",
+    video: "",
+    tags: ["Python", "Automation", "Web Scraper"]
+  },
+  {
+    id: 5,
+    name: "Booking Website",
+    summary: "Customer portal to request booking for bus tours and package deliveries.",
     video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    tags: ["React", "CSS Animations"]
+    tags: ["Full Stack", "JavaScript", "API"]
+  },
+  {
+    id: 6,
+    name: "Chinese Language Learner",
+    summary: "Built on top of the Mandarin Blueprint method, this SRS memory system allows you to test your skills and make better mnemonics for remembering Chinese characters.",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    tags: ["Python", "API"]
+  },
+  {
+    id: 7,
+    name: "Pokemon Shiny Hunter",
+    summary: "Image comparator program identifies exceedingly rare Pokemon in emulation and proceeds to notify the user via email and catch the specimen.",
+    video: "",
+    tags: ["Python", "Automation"]
   }
 ];
 

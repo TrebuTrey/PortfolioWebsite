@@ -193,6 +193,10 @@
   transform: none;
 }
 
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
