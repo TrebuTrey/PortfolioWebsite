@@ -18,7 +18,7 @@ export default function Certs() {
         }
 
         try {
-          const response = await fetch(`http://localhost:5000/api/logo/${cert.domain}`);
+          const response = await fetch(`${cert.domain}`);
           if (!response.ok) throw new Error('Failed to fetch logo');
 
           const data = await response.json();
