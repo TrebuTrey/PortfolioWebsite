@@ -22,18 +22,22 @@ const Contact = () => {
     });
   };
 
+  const CONTACT_API_URL = process.env.REACT_APP_CONTACT_API_URL || "https://zq3wx3iqjl.execute-api.us-west-1.amazonaws.com/default/lambda-contact";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('');
 
     try {
-      // TODO: Replace with your actual API endpoint when you deploy
-      console.log('Form submission:', formData);
-      
-      // Simulate API call for now
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      const res = await fetch(CONTACT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error('Failed to send');
+
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
@@ -49,7 +53,7 @@ const Contact = () => {
         <h2>Contact Me</h2>
         <p className="form-toggle" 
         onClick={() => setShowForm(prev => !prev)}>
-          Let's connect! Send me a message and I'll get back to you soon. <span className={`arrow ${showForm ? 'open' : ''}`}>&#9660;</span>
+          Let's Connect! Click Here to Open the Form and Let Me Know How I Can Help You. <span className={`arrow ${showForm ? 'open' : ''}`}>&#9660;</span>
         </p>
         
         <div className="contact-content">
