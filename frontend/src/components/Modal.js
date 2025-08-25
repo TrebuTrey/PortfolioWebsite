@@ -5,6 +5,10 @@ import './Modal.css';
 export default function Modal({ show, onClose, title, issuer, issueDate, accreditationUrl, description }) {
   if (!show) return null;
 
+  const passedUrl = accreditationUrl.startsWith("http")
+    ? accreditationUrl
+    : encodeURI(accreditationUrl); //encode spaces for local files
+
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -13,7 +17,7 @@ export default function Modal({ show, onClose, title, issuer, issueDate, accredi
         <h3>
           Issued:{" "}
           <a 
-            href={accreditationUrl} 
+            href={passedUrl} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="cert-link"
