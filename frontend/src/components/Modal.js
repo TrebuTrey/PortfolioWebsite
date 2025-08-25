@@ -7,7 +7,7 @@ export default function Modal({ show, onClose, title, issuer, issueDate, accredi
 
   const passedUrl = accreditationUrl.startsWith("http")
     ? accreditationUrl
-    : encodeURI(accreditationUrl); //encode spaces for local files
+    : `${process.env.PUBLIC_URL}${encodeURI(accreditationUrl)}`; //encode spaces for local files
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
