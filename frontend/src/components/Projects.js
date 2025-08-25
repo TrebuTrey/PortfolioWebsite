@@ -55,13 +55,21 @@ export default function Projects() {
                 transition={{ duration: 0.4 }}
               >
                 <p>{project.summary}</p>
-                <div className="video-container">
-                  <iframe
-                    src={project.video}
-                    title={project.name}
-                    frameBorder="0"
-                    allowFullScreen
-                  />
+                <div className="media-container">
+                  {project.media.endsWith(".jpg") || project.media.endsWith(".png") ? (
+                    <img
+                      src={project.media}
+                      alt={project.name}
+                    />
+                  ) : (
+                    <iframe
+                      src={project.media}
+                      title={project.name}
+                      frameBorder="0"
+                      allowFullScreen
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  )}
                 </div>
               </motion.div>
             )}

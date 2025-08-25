@@ -27,7 +27,7 @@ export const certifications = [
     issued: 2020,
     description: 'Certified Lean Six Sigma Green Belt, skilled in applying data-driven methodologies to identify process inefficiencies and implement continuous improvement strategies. Experienced in leading projects that reduce waste, improve quality, and enhance operational performance.',
     domain: 'asu.edu',
-    accreditation: '',
+    accreditation: '/certificates/LSS Green Belt.pdf',
     image: "/logo_images/six_sigma.svg"
   },
   { 
@@ -37,7 +37,7 @@ export const certifications = [
     issued: '2018', 
     description: 'Certified SolidWorks Mechanical Designer - Associate, demonstrating proficiency in transforming 2D blueprints into fully realized 3D models. Skilled in applying geometric dimensioning and tolerancing (GD&T) to ensure precision, and converting detailed 3D designs back into accurate technical drawings for manufacturing.', 
     domain: '3ds.com',
-    accreditation: '',
+    accreditation: '/certificates/Solidworks Certificate.pdf',
     image: "/logo_images/solidworks.svg" 
   },
   // { 
@@ -67,49 +67,49 @@ export const projectsData = [
     id: 1,
     name: "Portfolio Website",
     summary: "A React website to showcase my qualifications and completed projects across various mediums.",
-    video: "https://www.youtube.com/embed/aqz-KE-bpKQ",
+    media: "/projects/Website System Diagram.png",
     tags: ["API", "React", "JavaScript"]
   },
   {
     id: 2,
     name: "Estimation Tool",
     summary: "Connect Frontend to Inventory Management API and calculate total cost of workflow.",
-    video: "https://www.youtube.com/embed/ScMzIvxBSi4",
+    media: "https://www.youtube.com/embed/ScMzIvxBSi4",
     tags: ["API", "Python"]
   },
   {
     id: 3,
     name: "Progress Tracker",
     summary: "Macro-Enabled Excel files used by onsite superintendents to provide tracking updates to dashboard Excel sheet and can send daily updates to email lists.",
-    video: "",
+    media: "",
     tags: ["Excel VBA", "Automation"]
   },
   {
     id: 4,
     name: "Accounts Template Populator",
     summary: "Python UI for choosing the product and department of choice will populate and compile all files relevant for the customer and the billing department. Selenium used to file for permitting through the provided Microsoft Forms links.",
-    video: "",
+    media: "",
     tags: ["Python", "Automation", "Web Scraper"]
   },
   {
     id: 5,
     name: "Booking Website",
     summary: "Customer portal to request booking for bus tours and package deliveries.",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    media: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     tags: ["Full Stack", "JavaScript", "API"]
   },
   {
     id: 6,
     name: "Chinese Language Learner",
     summary: "Built on top of the Mandarin Blueprint method, this SRS memory system allows you to test your skills and make better mnemonics for remembering Chinese characters.",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    media: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     tags: ["Python", "API"]
   },
   {
     id: 7,
     name: "Pokemon Shiny Hunter",
     summary: "Image comparator program identifies exceedingly rare Pokemon in emulation and proceeds to notify the user via email and catch the specimen.",
-    video: "",
+    media: "",
     tags: ["Python", "Automation"]
   }
 ];
