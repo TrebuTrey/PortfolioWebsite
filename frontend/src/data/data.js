@@ -17,7 +17,7 @@ export const certifications = [
     issued: 'June 2025', 
     description: 'Completed Promineo Tech\'s Backend Software Development Program, covering core Java programming, object-oriented principles, and backend application structure. Trained in Spring Boot for building RESTful APIs and Java Database Connectivity (JDBC) for managing data persistence, with hands-on projects reinforcing each concept.', 
     domain: '',
-    accreditation: '',
+    accreditation: '/certificates/backend-software-developer.pdf',
     image: '/logo_images/promineo.png' 
   },
   {
@@ -27,7 +27,7 @@ export const certifications = [
     issued: 2020,
     description: 'Certified Lean Six Sigma Green Belt, skilled in applying data-driven methodologies to identify process inefficiencies and implement continuous improvement strategies. Experienced in leading projects that reduce waste, improve quality, and enhance operational performance.',
     domain: 'asu.edu',
-    accreditation: '/certificates/LSS Green Belt.pdf',
+    accreditation: '/certificates/lss-green-belt.pdf',
     image: "/logo_images/six_sigma.svg"
   },
   { 
@@ -37,7 +37,7 @@ export const certifications = [
     issued: '2018', 
     description: 'Certified SolidWorks Mechanical Designer - Associate, demonstrating proficiency in transforming 2D blueprints into fully realized 3D models. Skilled in applying geometric dimensioning and tolerancing (GD&T) to ensure precision, and converting detailed 3D designs back into accurate technical drawings for manufacturing.', 
     domain: '3ds.com',
-    accreditation: '/certificates/Solidworks Certificate.pdf',
+    accreditation: '/certificates/solidworks-certificate.pdf',
     image: "/logo_images/solidworks.svg" 
   },
   // { 
