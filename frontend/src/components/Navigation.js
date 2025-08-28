@@ -15,8 +15,13 @@ const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="nav-container">
-        <div className="nav-logo">
-          <h2>Trey Pubins</h2>
+        <div className="nav-left">
+          <div className="nav-logo">
+            <img src="/icons/TP3_website_logo.png" alt="Trey Pubins Logo" />
+          </div>
+          <div className="nav-name">
+            <h2>Trey Pubins</h2>
+          </div>
         </div>
         <ul className="nav-links">
           <li>
