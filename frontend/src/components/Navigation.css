@@ -26,6 +26,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem; /* space between logo and name */
+  position: relative;
 }
 
 .nav-logo img {
@@ -71,22 +72,50 @@
   transform: translateY(0);
 }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .nav-container {
     padding: 1rem;
   }
   
-  .nav-logo h2 {
-    font-size: 1.2rem;
-  }
-  
-  .nav-links {
-    gap: 1rem;
+  .nav-name {
+    display: none;
   }
   
   .nav-link {
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;     /* directly below nav-left */
+    left: 0;       /* align with the hamburger/logo */
+    width: 200px;
+    flex-direction: column;
+    background: black;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    color: white;
+    cursor: pointer;
+    margin-left: auto; /* pushes it neatly to the right */
   }
 }

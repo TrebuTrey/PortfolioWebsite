@@ -8,7 +8,7 @@ export default function Certs() {
 
   return (
     <div className="certifications">
-      <h3>Degrees & Certifications</h3>
+      <h3>Certifications</h3>
       <div className="cert-list">
         {certifications.map(({ id, name, issuingOrganization, issued, accreditation, description, image }) => (
           <div

@@ -1,4 +1,5 @@
 // Create a new file: src/components/Navigation.js
+import React, { useState, useRef, useEffect} from "react";
 import './Navigation.css';
 
 const Navigation = () => {
@@ -12,6 +13,29 @@ const Navigation = () => {
     }
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null);
+
+  // Used for smaller media devices
+  const handleLinkClick = (sectionId) => {
+    scrollToSection(sectionId);
+    setMenuOpen(false); // closes menu after click
+  };
+
+  // Close menu if click happens outside of nav
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="navigation">
       <div className="nav-container">
@@ -19,40 +43,38 @@ const Navigation = () => {
           <div className="nav-logo">
             <img src="/icons/TP3_website_logo.png" alt="Trey Pubins Logo" />
           </div>
+          {/* Hamburger menu button (only visible on mobile) */}
+          <button
+              className="hamburger"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle navigation"
+            >
+            ☰
+          </button>
           <div className="nav-name">
             <h2>Trey Pubins</h2>
           </div>
         </div>
-        <ul className="nav-links">
+
+         {/* Menu links */}
+        <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
           <li>
-            <button 
-              onClick={() => scrollToSection('home')}
-              className="nav-link"
-            >
+            <button onClick={() => handleLinkClick('home')} className="nav-link">
               About
             </button>
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('skills')}
-              className="nav-link"
-            >
+            <button onClick={() => handleLinkClick('skills')} className="nav-link">
               Skills
             </button>
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('projects')}
-              className="nav-link"
-            >
+            <button onClick={() => handleLinkClick('projects')} className="nav-link">
               Products/Projects
             </button>
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="nav-link"
-            >
+            <button onClick={() => handleLinkClick('contact')} className="nav-link">
               Contact
             </button>
           </li>

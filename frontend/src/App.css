@@ -79,6 +79,7 @@ html, body {
   }
   
   .content-container h2 {
+    text-align: center;
     font-size: 1.8rem;
   }
   

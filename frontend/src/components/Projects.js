@@ -17,8 +17,6 @@ export default function Projects() {
 
   return (
     <div className="projects-section">
-      <h2>Projects</h2>
-
       {/* Filter Bar */}
       <div className="filter-bar">
         {allTags.map(tag => (
