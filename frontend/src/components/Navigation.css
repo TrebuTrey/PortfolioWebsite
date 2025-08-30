@@ -96,20 +96,29 @@
   }
 
   .nav-links {
-    display: none;
     position: absolute;
-    top: 100%;     /* directly below nav-left */
-    left: 0;       /* align with the hamburger/logo */
+    top: 100%;     /* directly below nav-left/hamburger */
+    left: 0;       
     width: 200px;
     flex-direction: column;
-    background: black;
-    padding: 1rem;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0 1rem; /* reduce padding so animation looks natural */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+
+    /* animation setup */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
 
   .nav-links.show {
-    display: flex;
+    max-height: 500px; /* big enough to fit all links */
+    opacity: 1;
+    padding: 1rem; /* restore padding when open */
   }
 
   .hamburger {

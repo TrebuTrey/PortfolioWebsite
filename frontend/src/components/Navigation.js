@@ -56,7 +56,7 @@ const Navigation = () => {
           </div>
         </div>
 
-         {/* Menu links */}
+        {/* Menu links */}
         <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
           <li>
             <button onClick={() => handleLinkClick('home')} className="nav-link">
@@ -76,6 +76,14 @@ const Navigation = () => {
           <li>
             <button onClick={() => handleLinkClick('contact')} className="nav-link">
               Contact
+            </button>
+          </li>
+          <li>
+            <button
+              className="nav-link"
+              onClick={() => window.open("/certificates/website-resume.pdf", "_blank", "noopener,noreferrer")}
+            >
+              Résumé
             </button>
           </li>
         </ul>
