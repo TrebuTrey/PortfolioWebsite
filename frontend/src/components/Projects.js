@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { AccordionSection } from "./AccordionSection.js";
 import "./Projects.css";
 import { projectsData } from "../data/data";
 
@@ -23,7 +24,10 @@ export default function Projects() {
           <motion.button
             key={tag}
             className={`filter-btn ${tag === activeTag ? "active" : ""}`}
-            onClick={() => setActiveTag(tag)}
+            onClick={() => {
+              setActiveTag(tag);
+              setExpandedId(null); // close any open accordion when filter changes
+            }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -32,46 +36,44 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Accordion */}
       {filteredProjects.map(project => (
         <motion.div
           key={project.id}
           layout
           className="project-card"
-          onClick={() =>
-            setExpandedId(expandedId === project.id ? null : project.id)
-          }
         >
-          <motion.h3 layout>{project.name}</motion.h3>
-          <AnimatePresence>
-            {expandedId === project.id && (
-              <motion.div
-                className="project-details"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.4 }}
-              >
-                <p>{project.summary}</p>
-                <div className="media-container">
-                  {project.media.endsWith(".jpg") || project.media.endsWith(".png") ? (
-                    <img
-                      src={project.media}
-                      alt={project.name}
-                    />
-                  ) : (
-                    <iframe
-                      src={project.media}
-                      title={project.name}
-                      frameBorder="0"
-                      allowFullScreen
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  )}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* Accordion Header (clickable) */}
+          <div
+            className="project-header"
+            onClick={() =>
+              setExpandedId(expandedId === project.id ? null : project.id)
+            }
+          >
+            <motion.h3 layout>
+              {project.name}{" "}
+            </motion.h3>
+            <span className={`arrow ${expandedId === project.id ? "open" : ""}`}>
+              &#9660;
+            </span>
+            
+          </div>
+
+          <AccordionSection isOpen={expandedId === project.id}>
+            <p>{project.summary}</p>
+            <div className="media-container">
+              {project.media.endsWith(".jpg") || project.media.endsWith(".png") ? (
+                <img src={project.media} alt={project.name} />
+              ) : (
+                <iframe
+                  src={project.media}
+                  title={project.name}
+                  frameBorder="0"
+                  allowFullScreen
+                  style={{ width: "100%", height: "100%" }}
+                />
+              )}
+            </div>
+          </AccordionSection>
         </motion.div>
       ))}
     </div>
