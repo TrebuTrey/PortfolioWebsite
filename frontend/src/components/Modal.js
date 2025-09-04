@@ -16,17 +16,19 @@ export default function Modal({ show, onClose, title, issuer, issueDate, accredi
         <h3>{issuer}</h3>
         <h3>
           Issued:{" "}
-          <a 
-            href={passedUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="cert-link"
-          >
-            {issueDate}
-          </a>
+          {issueDate}
         </h3>
         <p>{description}</p>
-        <button onClick={onClose}><span>Close</span></button>
+        <div className="modal-buttons">
+          <button className="close-btn" onClick={onClose}>
+            <span>Close</span>
+          </button>
+          <a href={passedUrl} target="_blank" rel="noopener noreferrer">
+            <button className="verify-btn">
+              <span>Verify</span>
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   );
