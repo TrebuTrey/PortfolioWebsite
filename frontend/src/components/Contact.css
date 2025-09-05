@@ -1,10 +1,10 @@
-.arrow {
+.contact-section .arrow {
   color: white;
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.arrow.open {
+.contact-section .arrow.open {
   transform: rotate(180deg); /* arrow points up */
 }
 
