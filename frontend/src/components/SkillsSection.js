@@ -11,14 +11,17 @@ export default function SkillsSection() {
         <Certs />
         
         <div className="programming-langs">
-          <h4>Programming Languages</h4>
+          <h4>Programming Language Experience</h4>
           <div className="skills-bar-chart">
             <ul className="bar-chart">
               {/* Backdrop lines */}
               <div className="y-axis">
-                {[5, 4, 3, 2, 1, 0].map(i => (
-                  <div key={i} className="y-line">{i} yr</div>
-                ))}
+                <div key={5} className="y-line">5+</div>
+                <div key={4} className="y-line">4</div>
+                <div key={3} className="y-line">3</div>
+                <div key={2} className="y-line">2</div>
+                <div key={1} className="y-line">1</div>
+                <div key={0} className="y-line"></div>
               </div>
               {programmingLanguages.map((lang) => {
                 const heightPercent = (lang.experience / 5) * 100; // scale 1-5 to 0-100%
