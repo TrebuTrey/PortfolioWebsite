@@ -60,7 +60,38 @@ export const certifications = [
   // },
 ];
 
-export const programmingLanguages = ['Python', 'Java','JavaScript/TypeScript', 'Excel VBA', 'Matlab'];
+export const programmingLanguages = [
+  {
+    language: 'Python',
+    experience: 6,
+    project: 'Estimation Tool'
+  },
+  {
+    language: 'Java',
+    experience: 1,
+    project: 'MLB Database'
+  },
+  {
+    language: 'React',
+    experience: 1,
+    project: 'Portfolio Website'
+  },
+  {
+    language: 'JS/TS',
+    experience: 1,
+    project: 'D&D Encounter Creator'
+  },
+  {
+    language: 'Excel VBA',
+    experience: 2,
+    project: 'Project Tracker and Email Distributor'
+  },
+  {
+    language: 'Matlab',
+    experience: 2,
+    project: 'Quadcopter Simulink'
+  }
+];
 
 export const projectsData = [
   {
@@ -115,6 +146,6 @@ export const projectsData = [
 ];
 
 export const contactInfo = {
-    linkedIn: "https://www.linkedin.com/in/trey-pubins-a550701aa/",
+    linkedIn: "https://www.linkedin.com/in/trey-pubins/",
     gitHub: "https://github.com/TrebuTrey"
 }

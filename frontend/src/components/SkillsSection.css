@@ -1,21 +1,62 @@
 .lang-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lang-chip-wrapper {
+  width: 100%; /* stretch across the parent container */
+  display: flex; /* so inner pill can align naturally */
+  justify-content: flex-start; /* or center, depending on your design */
+  margin-bottom: 0.5rem;
 }
 
 .lang-chip {
   background: #14b8a6;
   color: white;
-  padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: default;
+  padding: 0.5rem 1rem; /* keep top/bottom and minimal left/right padding */
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start; /* left-align text inside */
+  min-width: calc(var(--chip-padding-multiplier, 1) * 4rem); /* optional dynamic width */
   transition: background 0.3s ease;
+  cursor: help;
+  box-sizing: border-box; /* ensures padding doesn't distort alignment */
 }
 
-.lang-chip:hover {
-  background: #0d9488;
+/* Only apply hover on screens wider than 768px */
+@media (min-width: 769px) {
+  .lang-chip:hover {
+    background: #0d9488;
+  }
+}
+
+.lang-chips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* keeps them in rows */
+  gap: 10px;       /* spacing between chips */
+}
+
+@media (max-width: 768px) {
+  .lang-chip-wrapper {
+    width: 100%;              /* stretch across parent */
+    display: flex;            /* enable flex for alignment */
+    justify-content: center;  /* center the pill horizontally */
+    margin-bottom: 0.5rem;    /* spacing between rows */
+  }
+
+  .lang-chip {
+    min-width: auto;           /* remove dynamic width */
+    width: 10rem;               /* let content + padding define size */
+    padding: 0.5rem 1rem;      /* same padding for all */
+    justify-content: center;   /* optional: center text on small screens */
+  }
+
+  .lang-chips ul {
+    justify-content: center;   /* optional: center row of pills */
+  }
 }

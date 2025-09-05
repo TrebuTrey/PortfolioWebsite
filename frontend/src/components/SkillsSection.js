@@ -13,9 +13,20 @@ export default function SkillsSection() {
         <div className="programming-langs">
           <h4>Programming Languages</h4>
           <div className="lang-chips">
-            {programmingLanguages.map(lang => (
-              <span key={lang} className="lang-chip">{lang}</span>
-            ))}
+            <ul className="lang-chips">
+              {programmingLanguages.map(lang => (
+                <li key={lang.language} className="lang-chip-wrapper">
+                  <div
+                    className="lang-chip"
+                    style={{
+                      "--chip-padding-multiplier": lang.experience
+                    }}
+                  >
+                    {lang.language}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
