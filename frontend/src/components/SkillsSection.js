@@ -12,20 +12,27 @@ export default function SkillsSection() {
         
         <div className="programming-langs">
           <h4>Programming Languages</h4>
-          <div className="lang-chips">
-            <ul className="lang-chips">
-              {programmingLanguages.map(lang => (
-                <li key={lang.language} className="lang-chip-wrapper">
-                  <div
-                    className="lang-chip"
-                    style={{
-                      "--chip-padding-multiplier": lang.experience
-                    }}
-                  >
-                    {lang.language}
-                  </div>
-                </li>
-              ))}
+          <div className="skills-bar-chart">
+            <ul className="bar-chart">
+              {/* Backdrop lines */}
+              <div className="y-axis">
+                {[5, 4, 3, 2, 1, 0].map(i => (
+                  <div key={i} className="y-line">{i} yr</div>
+                ))}
+              </div>
+              {programmingLanguages.map((lang) => {
+                const heightPercent = (lang.experience / 5) * 100; // scale 1-5 to 0-100%
+                return (
+                  <li key={lang.language} className="bar-wrapper">
+                    <div
+                      className="bar"
+                      style={{ height: `${heightPercent}%` }}
+                      title={`${lang.language}: ${lang.experience}`}
+                    ></div>
+                    <span className="bar-label">{lang.language}</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
