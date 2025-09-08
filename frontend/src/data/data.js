@@ -64,32 +64,32 @@ export const programmingLanguages = [
   {
     language: 'Python',
     experience: 6,
-    project: 'Estimation Tool'
-  },
-  {
-    language: 'Java',
-    experience: 1,
-    project: 'MLB Database'
-  },
-  {
-    language: 'React',
-    experience: 1,
-    project: 'Portfolio Website'
-  },
-  {
-    language: 'JS/TS',
-    experience: 1,
-    project: 'D&D Encounter Creator'
+    project: 'Estimation Tool',
   },
   {
     language: 'Excel VBA',
     experience: 2,
-    project: 'Project Tracker and Email Distributor'
+    project: 'Project Tracker and Email Distributor',
   },
   {
     language: 'Matlab',
     experience: 2,
-    project: 'Quadcopter Simulink'
+    project: 'Quadcopter Simulink',
+  },
+  {
+    language: 'Java',
+    experience: 1,
+    project: 'MLB Database',
+  },
+  {
+    language: 'React',
+    experience: 1,
+    project: 'Portfolio Website',
+  },
+  {
+    language: 'JavaScript',
+    experience: 1,
+    project: 'D&D Encounter Creator',
   }
 ];
 
