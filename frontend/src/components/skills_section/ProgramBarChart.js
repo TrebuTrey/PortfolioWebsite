@@ -32,6 +32,7 @@ export default function ProgramBarChart(){
                 <XAxis 
                     dataKey="language" 
                     tick={<CustomTick />}
+                    interval={0}   // show every tick, don’t skip
                     height={50} // increase this until the images fit
                 />
                 <YAxis 

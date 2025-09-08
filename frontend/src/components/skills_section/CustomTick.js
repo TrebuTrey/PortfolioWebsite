@@ -1,18 +1,24 @@
 import React from "react";
 
 const CustomTick = ({ x, y, payload }) => {
-  // Match the "language" from your dataset
-  const logoFileName = payload.value.toLowerCase().replace(/\s|\//g, "_"); 
-  console.log("Tick logo path:", `/programming_logos/${logoFileName}.svg`);
+  const logoFileName = payload.value.toLowerCase().replace(/\s|\//g, "_");
+
+  // Pick logo size dynamically based on screen width
+  let size = 48; // desktop default
+  if (window.innerWidth < 600) size = 20;
+  if (window.innerWidth < 400) size = 16;
+
   return (
-    <image
-      href={`/programming_logos/${logoFileName}.svg`}
-      x={x - 24}   // adjust offset so image is centered
-      y={y}   // adjust vertical placement
-      width={48}
-      height={48}
-      preserveAspectRatio="xMidYMid meet"
-    />
+    <g transform={`translate(${x}, ${y})`}>
+      <image
+        href={`/programming_logos/${logoFileName}.svg`}
+        x={-size / 2}   // <-- center horizontally
+        y={0}
+        width={size}
+        height={size}
+        preserveAspectRatio="xMidYMid meet"
+      />
+    </g>
   );
 };
 
