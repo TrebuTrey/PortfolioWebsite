@@ -98,7 +98,7 @@ export const projectsData = [
     id: 1,
     name: "Portfolio Website",
     summary: "A React website to showcase my qualifications and completed projects across various mediums.",
-    media: "/projects/Website System Diagram.png",
+    media: "/projects/portfolio_website_diagram.svg",
     tags: ["API", "React", "JavaScript"]
   },
   {

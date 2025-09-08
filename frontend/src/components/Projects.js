@@ -61,7 +61,7 @@ export default function Projects() {
           <AccordionSection isOpen={expandedId === project.id}>
             <p>{project.summary}</p>
             <div className="media-container">
-              {project.media.endsWith(".jpg") || project.media.endsWith(".png") ? (
+              {project.media.endsWith(".jpg") || project.media.endsWith(".png") || project.media.endsWith(".svg") ? (
                 <img src={project.media} alt={project.name} />
               ) : (
                 <iframe
