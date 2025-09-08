@@ -4,7 +4,7 @@ import React from 'react';
 import './App.css';
 import Navigation from './components/Navigation';
 import Contact from './components/Contact';
-import SkillsSection from './components/SkillsSection';
+import SkillsSection from './components/skills_section/SkillsSection';
 import Projects from './components/Projects';
 
 function App() {

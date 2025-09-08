@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Certs.css';
 import Modal from './Modal';
-import { certifications } from '../data/data';
+import { certifications } from '../../data/data';
 
 export default function Certs() {
   const [selectedCert, setSelectedCert] = useState(null);
